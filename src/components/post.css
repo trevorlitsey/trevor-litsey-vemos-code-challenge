@@ -1,0 +1,67 @@
+.post {
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+  display: flex;
+  margin: var(--spacing-m) auto;
+  max-width: var(--screen-size-m);
+}
+
+.post__thumbnail {
+  display: inline-block;
+
+  /** 
+    * height: 140px; width: 140px behaves oddly depending on what order the attributes are added to the dom.
+    * Ideally this would not be a fixed size either way - the reddit thumbnails seems to max out at 140px.
+    */
+  min-height: 140px;
+  min-width: 140px;
+  max-height: 140px;
+  max-width: 140px;
+}
+
+.post__content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding: var(--spacing-s);
+}
+
+.post__content > *:not(:last-child) {
+  margin-bottom: var(--spacing-m);
+}
+
+.post__date {
+  text-align: right;
+}
+
+.post__title {
+  font-size: var(--font-size-5);
+  font-weight: bold;
+  text-align: center;
+}
+
+.post__content-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 512px) {
+  .post__date {
+    text-align: center;
+  }
+
+  .post__thumbnail {
+    margin: var(--spacing-s);
+  }
+
+  .post__title {
+    font-size: var(--font-size-6);
+  }
+
+  .post__content-bottom {
+    justify-content: center;
+  }
+}
